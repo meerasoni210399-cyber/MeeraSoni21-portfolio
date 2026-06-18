@@ -1,0 +1,20 @@
+{
+  "name": "meerasoni21-portfolio",
+  "version": "1.0.0",
+  "description": "A modern, glassmorphism-inspired personal portfolio dashboard",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "portfolio",
+    "personal-website",
+    "glassmorphism"
+  ],
+  "author": "Meera Soni",
+  "license": "MIT",
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1"
+  }
+}
