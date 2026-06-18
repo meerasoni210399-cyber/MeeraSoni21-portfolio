@@ -5,7 +5,7 @@ A modern, glassmorphism-inspired personal portfolio dashboard that beautifully s
 
 A modern, glassmorphism-inspired personal portfolio dashboard that beautifully showcases my web development skills, projects, and certificates in a clean, single-page layout.
 
-🚀 **Live Demo:** [Insert your live website link here (e.g., https://yourusername.github.io)]
+🚀 **Live Demo:** https://meera-soni21-portfolio.vercel.app/
 
 ---
 
@@ -26,6 +26,3 @@ This project was built using the following technologies:
 * **CSS3** - For glassmorphism effects, custom animations, Flexbox, and Grid layouts.
 * **JavaScript** - For dynamic data rendering, real-time date/time display, and carousel functionality.
 
----── js/
-│   └── script.js       # Dynamic time logic, carousel slider, and interactivity
-└── assets/             # Images, logos, icons, and certificate assets
