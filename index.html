@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Card Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <video id="bgVideo" autoplay loop muted playsinline>
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+    <div class="dashboard-wrapper home" id="home">
+        <div class="main-card-console">
+
+            <aside class="sidebar-left">
+                <div class="brand-logo">
+                    <h2 class="logo-text">MS</h2>
+                </div>
+                <nav class="nav-links">
+                    <a href="#home" class="link-item" id="homeLink" title="Home"><i class="fa-solid fa-house"></i></a>
+                    <a href="#certificates" class="link-item" id="starLink" title="Certificates"><i
+                            class="fa-solid fa-star"></i></a>
+                    <a href="#projects" class="link-item" id="cameraLink" title="Projects"><i
+                            class="fa-solid fa-images"></i></a>
+                    <a href="#lang" class="link-item" id="briefcaseLink" title="Languages"><i
+                            class="fa-solid fa-laptop-code"></i></a>
+                </nav>
+                <div class="user-avatar-wrap">
+                    <img src="img4.jpg" alt="Avatar">
+                </div>
+            </aside>
+
+            <main class="center-workspace">
+                <header class="tab-header-system">
+                    <div class="header-tab tab-center">
+                        <div class="counter-pill">
+                            <span id="current-date">Date</span>
+                            <span id="current-time">Current Time</span>
+                        </div>
+                    </div>
+                </header>
+
+                <div class="showcase-viewport">
+                    <div class="hero-canvas-wrapper">
+                        <img src="img4.jpg" alt="Main Artist Visual" class="main-stream-img">
+
+                        <button class="pink-hotspot-btn" id="like-btn" aria-label="heart">
+                            <i class="fa-solid fa-heart"></i>
+                            <!-- <span id="like-count">0</span> -->
+                        </button>
+
+                        <div class="glass-artist-panel">
+                            <h1 class="branding-header">Meera <br><span class="glow">X</span><span class="glow-pink">
+                                    Soni</span>
+                            </h1>
+                            <div class="glass-panel-metrics">
+                                <a href="https://www.linkedin.com/in/meerasoni21/" target="_blank" rel="noopener"><i
+                                        class="fa-brands fa-linkedin-in" style="color: #0A66C2;"></i></a>
+                                <a href="https://github.com/Meerasoni21" target="_blank" rel="noopener"><i
+                                        class="fa-brands fa-github" style="color: #181717;"></i></a>
+                                <a href="https://in.pinterest.com/shitalcreates/" target="_blank" rel="noopener"><i
+                                        class="fa-brands fa-pinterest" style="color: #E60023;"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-meta-dock">
+                        <div class="dock-input-field">
+                            <span class="dock-label">Real Name</span>
+                            <h1>Meera Soni</h1>
+                            <h4>Web Developer</h4>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="sidebar-right">
+                <div class="widget-tile language" id="lang">
+                    <span class="zero-mar">Languages</span>
+                    <div class="genre-tags">
+                        <span class="genre-tag"><i class="fa-brands fa-html5"
+                                style="color: rgb(227, 79, 38);"></i></span>
+                        <span class="genre-tag"><i class="fa-brands fa-css3-alt" style="color: #1572B6;"></i></span>
+                        <span class="genre-tag"><i class="fa-brands fa-js"
+                                style="color: #F7DF1E; background: #000000; padding: 2px; border-radius: 4px;"></i></span>
+                        <span class="genre-tag"><i class="fa-brands fa-python" style="color: #4B8BBE"></i></span>
+                        <span class="genre-tag"><i class="fa-brands fa-php" style="color: #8489d7"></i></span>
+                        <span class="genre-tag"><i class="fa-solid fa-database" style="color: #00758F;"></i></span>
+                    </div>
+                </div>
+
+                <div class="widget-tile media-strip-widget" id="projects">
+                    <span class=" zero-mar">Projects</span>
+                    <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="project1.png" class="d-block w-100 fullscreen-trigger"
+                                    alt="project1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="project2.png" class="d-block w-100 fullscreen-trigger"
+                                    alt="project2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="project3.png" class="d-block w-100 fullscreen-trigger"
+                                    alt="project3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="widget-tile certificate" id="certificates">
+                    <span class="tile-title">Certificates</span>
+                    <div id="certificatesCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="certificate1.png" class="d-block w-100 fullscreen-trigger" alt="certificate1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="certificate2.png" class="d-block w-100 fullscreen-trigger" alt="certificate2">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#certificatesCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#certificatesCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <svg width="0" height="0" style="position: absolute; pointer-events: none;">
+        <defs>
+            <clipPath id="custom-frame-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0.12,0 
+               L 0.35,0 
+               A 0.04,0.04 0 0,1 0.39,0.03 
+               L 0.39,0.03
+               A 0.04,0.04 0 0,0 0.43,0.06
+               L 0.60,0.06
+               A 0.04,0.04 0 0,0 0.64,0.03
+               L 0.64,0.03
+               A 0.04,0.04 0 0,1 0.68,0 
+               L 0.88,0 
+               A 0.12,0.12 0 0,1 1,0.12 
+               L 1,0.88 
+               A 0.12,0.12 0 0,1 0.88,1 
+               L 0.45,1 
+               A 0.12,0.12 0 0,1 0.33,0.88 
+               L 0.33,0.72 
+               A 0.08,0.08 0 0,0 0.25,0.64 
+               L 0.06,0.64 
+               A 0.06,0.06 0 0,1 0,0.58 
+               L 0,0.12 
+               A 0.12,0.12 0 0,1 0.12,0 
+               Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <div id="fullscreenModal" class="fullscreen-modal" role="dialog" aria-hidden="true">
+        <span class="fullscreen-close">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Preview" class="fullscreen-image">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
