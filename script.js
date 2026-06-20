@@ -25,18 +25,37 @@ fullscreenModal.addEventListener('click', function (e) {
 });
 
 // Live Clock and Date Script
-// Optimized: Use simpler date formatting to avoid expensive toLocaleDateString calls
+// Optimized: Use simpler date/time formatting to avoid expensive locale operations
+// Cache formatted time to reduce DOM reflows
+let lastFormattedDate = '';
+let lastFormattedTime = '';
+
 function updateDateTime() {
     const now = new Date();
-    // Use simple string formatting instead of toLocaleDateString for better performance
+    
+    // Optimize date formatting - avoid expensive toLocaleDateString
     const month = String(now.getMonth() + 1).padStart(2, '0');
     const day = String(now.getDate()).padStart(2, '0');
     const year = now.getFullYear();
     const formattedDate = `${month}/${day}/${year}`;
-    const formattedTime = now.toLocaleTimeString('en-US', { hour12: true });
-
-    document.getElementById('current-date').innerText = formattedDate;
-    document.getElementById('current-time').innerText = formattedTime;
+    
+    // Optimize time formatting - use faster alternative to toLocaleTimeString
+    const hours = String(now.getHours() % 12 || 12).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = now.getHours() >= 12 ? 'PM' : 'AM';
+    const formattedTime = `${hours}:${minutes}:${seconds} ${ampm}`;
+    
+    // Only update DOM if values changed (reduces layout thrashing)
+    if (formattedDate !== lastFormattedDate) {
+        document.getElementById('current-date').innerText = formattedDate;
+        lastFormattedDate = formattedDate;
+    }
+    
+    if (formattedTime !== lastFormattedTime) {
+        document.getElementById('current-time').innerText = formattedTime;
+        lastFormattedTime = formattedTime;
+    }
 }
 
 updateDateTime();
