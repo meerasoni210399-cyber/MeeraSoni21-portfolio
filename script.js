@@ -25,10 +25,14 @@ fullscreenModal.addEventListener('click', function (e) {
 });
 
 // Live Clock and Date Script
+// Optimized: Use simpler date formatting to avoid expensive toLocaleDateString calls
 function updateDateTime() {
     const now = new Date();
-    const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-    const formattedDate = now.toLocaleDateString('en-US', dateOptions);
+    // Use simple string formatting instead of toLocaleDateString for better performance
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const year = now.getFullYear();
+    const formattedDate = `${month}/${day}/${year}`;
     const formattedTime = now.toLocaleTimeString('en-US', { hour12: true });
 
     document.getElementById('current-date').innerText = formattedDate;
