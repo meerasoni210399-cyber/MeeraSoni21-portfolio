@@ -5,17 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meera Portfolio</title>
-    <!-- Preload LCP image to reduce render delay -->
-    <link rel="preload" as="image" href="img4.jpg">
+    
+    <!-- Preload LCP image and background video with high priority -->
+    <link rel="preload" as="image" href="img4.jpg" fetchpriority="high">
+    <link rel="preload" as="video" href="bg.mp4">
+    
+    <!-- Preload FontAwesome for icon rendering -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
+    <!-- Load stylesheets with optimization -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <video id="bgVideo" autoplay loop muted playsinline>
+    <!-- Optimized video tag with poster image and preload attribute -->
+    <video id="bgVideo" autoplay loop muted playsinline poster="img4.jpg" preload="auto">
         <source src="bg.mp4" type="video/mp4">
     </video>
+    
     <div class="dashboard-wrapper home" id="home">
         <div class="main-card-console">
 
@@ -49,7 +59,7 @@
 
                 <div class="showcase-viewport">
                     <div class="hero-canvas-wrapper">
-                        <img src="img4.jpg" alt="Main Artist Visual" class="main-stream-img">
+                        <img src="img4.jpg" alt="Main Artist Visual" class="main-stream-img" fetchpriority="high">
 
                         <button class="pink-hotspot-btn" id="like-btn" aria-label="heart">
                             <i class="fa-solid fa-heart"></i>
@@ -187,7 +197,7 @@
         <img id="fullscreenImage" src="" alt="Fullscreen Preview" class="fullscreen-image">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
     <script defer src="script.js"></script>
     
     <!-- Vercel Web Analytics -->
